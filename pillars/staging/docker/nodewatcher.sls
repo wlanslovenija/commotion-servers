@@ -312,21 +312,15 @@ docker:
 
       HTTPS_PUBLIC_KEY = """
       -----BEGIN PUBLIC KEY-----
-      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyGTutAIvDLMhQcfjLrzz
-      kho+uhklozGOhF3OvnYoGxlzXt7BZ/zd73dn8z3FcNHfA+VyJsz3+vaMOMmz0aim
-      btfkZrKgYRcF6JhkILnEDDz8072rVX2kR61BTh8LoXPJcI3Lhcx1UiiGah/TouDw
-      RLn0bhZw/FdBsEAbw8kuCJ+OvXkT6N8zM5FIHsMMp+KAAD6TJcFFUWTU0C+wUtZL
-      bj9TPZReK+FQbX6rbtG4Q+Dmrft92jnHkj1WwwVhKbrG0uEuwNOBoCv79sR7YkoE
-      5xYwzatP9S+YIJ6weWqgPlpqafXoISS7dKMHql1jWWIMVZRu7DZcEyrJ5VEZLAsg
-      YQIDAQAB
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAppNNz/YB9MmM1EBw3ajF
+      ZWZ6y8q/3Vui3ZBJveRIYvnbO2Okn3/clJxRLAQhhHn86YrtIgpMrhirgvZDIdTv
+      rHz+CT4WntjlEX/sxaJ3lnbzTX+S0dR99gB8ysmByKba3Y2H9syZ123qt/rfSfWM
+      thy+zrMjuJcspf9XSbFrsopN9XZRGynuFkr1HmP0NKqxucP7MdoL4nI8CB2euphB
+      nsUeEifBJoQfTFkE4ryLe96AjDpENnOx5MJhvoIuHSPw3NNeGcYtvverQQ+0PTZa
+      QHrv+k9rCTdn+wN0CxpusBGj/zny6/D5A18K/U5clVpmJfGGyl4utMCDe47ifEa2
+      +wIDAQAB
       -----END PUBLIC KEY-----
       """
-
-      LEAFLET_CONFIG = {
-        'DEFAULT_CENTER': (46.05, 14.507),
-        'DEFAULT_ZOOM': 8,
-        'RESET_VIEW': False,
-      }
 
       NETWORK = {
         'NAME': 'Commotion Wireless',
