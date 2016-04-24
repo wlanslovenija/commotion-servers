@@ -128,7 +128,20 @@ docker:
   environments:
     nodewatcher:
       DJANGO_SETTINGS_MODULE: nodewatcher.settings_production
-      SECRET_KEY: iDJDls2fIqmONe3SsIFav8Apu3O16XuO3UPCmtvJ
+      SECRET_KEY: |
+        -----BEGIN PGP MESSAGE-----
+        Version: GnuPG v1
+
+        hQEMA4LktP2+6CAcAQf+KRmE/nENsirZDIX8vV3pgLXIwzg141iNKMgXKQUSBmOZ
+        so4KhdijdVb59yOZ/NYG3Y9dgv9R3pW0EI3b3xMdBs+YWHw2nyVqyu2vlL2eJYMh
+        NQddHa8a7y4rZ7KOXYwmbAttBbW7gJFYoQ0xTwFQKY1TmBpaJcsd2BNJBWhwRRtN
+        D1fzdO8l7uuloQylOYbSR/H4Zmk6QAy+JNRP0QIZd1wRIxQJE7mBcKTfRILxQm8t
+        amx92KrLtTsueR9/J4+ygXWXYorzK4f0ISUTROdKHyf0rp6hafKdH7XHx5M0Pj9w
+        D2/z1HbF0cRPNfQZ2fY+QWBneJyOWYdA89UU6NtndtJjAWWUx4jQIL1i4u5EwM+f
+        fXcQLcPVm6tEKb/HTjqZqEY4icBGbiS4clbRIdfkCQiMa/354gg02p6nIm1utgNf
+        Y0gKMduVCStas8IjUMtCSRqtJtNUG97MyjJY1u5uOc4uyLwe
+        =hi5m
+        -----END PGP MESSAGE-----
   configs:
     nodewatcher: |
       from .settings import *
