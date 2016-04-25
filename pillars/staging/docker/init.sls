@@ -1,3 +1,5 @@
+docker.version: auto
+
 include:
   - staging.docker.tokumx
   - staging.docker.postgresql
