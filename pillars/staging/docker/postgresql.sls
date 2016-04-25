@@ -2,7 +2,8 @@
 docker:
   containers:
     postgresql:
-      image: wlanslovenija/postgis
+      image: tozd/postgresql
+      tag: "9.3"
       volumes:
         /srv/storage/postgresql:
           bind: /var/lib/postgresql/9.3/main
