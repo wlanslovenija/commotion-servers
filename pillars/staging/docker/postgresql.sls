@@ -12,7 +12,6 @@ docker:
           bind: /var/log/postgresql
           user: nobody
           group: nogroup
-          logrotate: True
       environment:
         - postgresql
   environments:

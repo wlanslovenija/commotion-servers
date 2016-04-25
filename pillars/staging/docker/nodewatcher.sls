@@ -55,7 +55,6 @@ docker:
           bind: /var/log/uwsgi
           user: nobody
           group: nogroup
-          logrotate: True
     nodewatcher-generator:
       image: wlanslovenija/nodewatcher-generator
       environment:
@@ -78,7 +77,6 @@ docker:
           bind: /var/log/celery
           user: nobody
           group: nogroup
-          logrotate: True
     nodewatcher-monitor:
       image: wlanslovenija/nodewatcher-monitor
       environment:
@@ -101,7 +99,6 @@ docker:
           bind: /var/log/monitor
           user: nobody
           group: nogroup
-          logrotate: True
     nodewatcher-monitorq:
       image: wlanslovenija/nodewatcher-monitorq
       environment:
@@ -124,7 +121,6 @@ docker:
           bind: /var/log/celery
           user: nobody
           group: nogroup
-          logrotate: True
   environments:
     nodewatcher:
       DJANGO_SETTINGS_MODULE: nodewatcher.settings_production

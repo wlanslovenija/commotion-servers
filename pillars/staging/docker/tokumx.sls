@@ -15,4 +15,3 @@ docker:
           bind: /var/log/tokumx
           user: nobody
           group: nogroup
-          logrotate: True
