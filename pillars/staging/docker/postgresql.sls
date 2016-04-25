@@ -36,3 +36,4 @@ docker:
       PGSQL_DB_1_NAME: nodewatcher
       PGSQL_DB_1_OWNER: nodewatcher
       PGSQL_DB_1_ENCODING: UNICODE
+      PGSQL_DB_1_POSTGIS: true
