@@ -11,6 +11,8 @@ cachedir: /tmp/salt-cache
 jinja_trim_blocks: True
 jinja_lstrip_blocks: True
 gpg_keydir: /home/commotion/servers/gpgkeys
+ssh_minion_opts:
+  gpg_keydir: /home/commotion/servers/gpgkeys
 file_roots:
   base:
     - /home/commotion/servers/states
