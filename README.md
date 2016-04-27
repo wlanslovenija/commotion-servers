@@ -1,5 +1,8 @@
 # Commotion nodewatcher installation
 
+This repository contains the necessary Salt files to deploy a nodewatcher instance for
+Commotion Wireless.
+
 An example Salt configuration, which may be used with `salt-ssh` follows.
 
 ```
