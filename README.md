@@ -1,7 +1,9 @@
 # Commotion nodewatcher installation
 
-This repository contains the necessary Salt files to deploy a nodewatcher instance for
+This repository contains [Salt](http://docs.saltstack.com/en/latest/) files to deploy a nodewatcher instance for
 Commotion Wireless.
+Expected to be used with Ubuntu Server 14.04, but it might work with other
+distributions as well.
 
 An example Salt configuration, which may be used with `salt-ssh` follows.
 
@@ -10,9 +12,11 @@ pki_dir: /home/commotion/servers/config/pki
 cachedir: /tmp/salt-cache
 jinja_trim_blocks: True
 jinja_lstrip_blocks: True
-gpg_keydir: /home/commotion/servers/gpgkeys
+ssh_use_home_key: True
 ssh_minion_opts:
-  gpg_keydir: /home/commotion/servers/gpgkeys
+  gpg_keydir: /home/commotion/.gnupg
+log_file: /home/commotion/servers/log/master
+ssh_log_file: /home/commotion/servers/log/ssh
 file_roots:
   base:
     - /home/commotion/servers/states
@@ -28,16 +32,13 @@ In this example, the `servers` directory contains a checkout of this repository,
 the `tozd` directory is a checkout of the [`tozd/salt` repository](https://github.com/tozd/salt),
 containing commonly used Salt states.
 
-You should put SSH keys used by `salt-ssh` to login into servers into the `config/pki`
-directory under this repository.
-
 You should also create a `config/roster` file with something like:
 
 ```
 nodewatcher:
   host: nodewatcher.commotionwireless.net
   port: 22
-  user: commotion
+  user: <username>
   sudo: True
 ```
 
