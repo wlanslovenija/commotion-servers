@@ -1,0 +1,3 @@
+[submodule "tozd-states"]
+	path = tozd-states
+	url = https://github.com/tozd/salt.git

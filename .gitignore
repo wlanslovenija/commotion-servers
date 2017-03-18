@@ -1,6 +1,8 @@
 *.sublime-*
 *.swp
 *~
-/config
+/config/pki
+/config/roster
 /keys
 /log
+.idea

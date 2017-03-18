@@ -2,37 +2,10 @@
 
 This repository contains [Salt](http://docs.saltstack.com/en/latest/) files to deploy a nodewatcher instance for
 Commotion Wireless.
-Expected to be used with Ubuntu Server 14.04, but it might work with other
-distributions as well.
+Expected to be used with Ubuntu Server 14.04 and 16.04, but it might work with other distributions
+as well.
 
-An example Salt configuration, which may be used with `salt-ssh` follows.
-
-```
-pki_dir: /home/commotion/servers/config/pki
-cachedir: /tmp/salt-cache
-jinja_trim_blocks: True
-jinja_lstrip_blocks: True
-ssh_use_home_key: True
-ssh_minion_opts:
-  gpg_keydir: /home/commotion/.gnupg
-log_file: /home/commotion/servers/log/master
-ssh_log_file: /home/commotion/servers/log/ssh
-file_roots:
-  base:
-    - /home/commotion/servers/states
-    - /home/commotion/tozd
-pillar_roots:
-  base:
-    - /home/commotion/servers/pillars
-```
-
-You can put it into the `config/master` file under this repository.
-
-In this example, the `servers` directory contains a checkout of this repository, while
-the `tozd` directory is a checkout of the [`tozd/salt` repository](https://github.com/tozd/salt),
-containing commonly used Salt states.
-
-You should also create a `config/roster` file with something like:
+You should create a `config/roster` file with something like:
 
 ```
 nodewatcher:
@@ -40,6 +13,21 @@ nodewatcher:
   port: 22
   user: <username>
   sudo: True
+```
+
+Your user on the target server should have sudo permissions without needing to provide a password.
+You can configure that in `/etc/sudoers` on the target server with such line (you can replace existing
+one without `NOPASSWD`):
+
+```
+# Allow members of group sudo to execute any command
+%sudo   ALL=(ALL) NOPASSWD: ALL
+```
+
+Then you can sync the state of a server by doing:
+
+```
+$ salt-ssh '<servername>' state.highstate
 ```
 
 Secrets in this example are encrypted with a GPG keypair to demonstrate how secrets can be protected.
@@ -50,13 +38,13 @@ You should generate your own keypair, encrypt secrets yourself, and make sure to
 Keypair was generated without any password on the keychain using:
 
 ```
-gpg --homedir /home/commotion/servers/gpgkeys --gen-key
+gpg --homedir ./gpgkeys --gen-key
 ```
 
-Secrets can be encrypted using:
+Future secrets can be encrypted using:
 
 ```
-echo -n "supersecret" | gpg --homedir /home/commotion/servers/gpgkeys --armor --encrypt -r C84CC9E2
+echo -n "supersecret" | gpg --homedir ./gpgkeys --armor --encrypt -r C84CC9E2
 ```
 
 [See Salt GPG renderer documentation for more information](https://docs.saltstack.com/en/latest/ref/renderers/all/salt.renderers.gpg.html).

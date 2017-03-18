@@ -1,0 +1,16 @@
+pki_dir: /tmp/salt-pki
+cachedir: /tmp/salt-cache
+jinja_trim_blocks: True
+jinja_lstrip_blocks: True
+ssh_use_home_key: True
+ssh_minion_opts:
+  gpg_keydir: ./gpgkeys
+log_file: ./log/master
+ssh_log_file: ./log/ssh
+file_roots:
+  base:
+    - ./states
+    - ./tozd-states
+pillar_roots:
+  base:
+    - ./pillars
